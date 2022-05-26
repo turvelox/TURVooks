@@ -69,8 +69,30 @@ input::-webkit-search-results-decoration{
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.max-w-sub {
+  max-width: 280px;
+}
+.border-all-1 {
+  border: 1px solid #c5c5c5;
+}
+.border-t-1 {
+  border-top: 1px solid #c5c5c5;
+}
 .border-b-1 {
   border-bottom: 1px solid #c5c5c5;
+}
+.mini-book {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.mini-book-title {
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 0 10px;
+  magin-left: 10px;
+  line-height: 30px;
+  font-size: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  height: 30px;
 }
 
 /* Google Font */
@@ -137,6 +159,12 @@ body {
 }
 .font-green {
   color: #34b27e;
+}
+.font-gray {
+  color: #555555;
+}
+.font-super-gray {
+  color: #888888;
 }
 
 /* 4줄 이상 생략 */

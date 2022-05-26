@@ -12,6 +12,7 @@ const StyledSlider = styled(Slider)`
     left: 50%;
     transform: translate(-50%, 0);
     text-align: left;
+    padding-left: 20px;
   }
   .slick-dots li {
     width: 20px;
@@ -32,11 +33,6 @@ const StyledSlider = styled(Slider)`
     height: 2px;
     background-color: #fff;
   }
-  @media (max-width: 740px) { 
-    .slick-dots {
-      padding-left: 20px;
-    }
-   }
 `;
 
 export default function Visual() {
@@ -60,31 +56,31 @@ export default function Visual() {
     <div>
       <StyledSlider {...settings}>
         <div className='visual-slide-item visual-slide-item01'>
-          <div className='md:px-4 wrapper-740 relative h-48'>
-            <div className='text-2xl md:text-xl text-white font-extralight absolute top-7 left-0 md:left-4 z-20'>
+          <div className='px-4 wrapper-740 relative h-48'>
+            <div className='text-2xl md:text-xl text-white font-extralight absolute top-7 left-4 z-20'>
               <p>독서왕 정아영 아나운서의<br/>솜SEE 좋은 리디뷰 .</p>
             </div>
-            <div className='absolute flex items-end right-0 md:right-4 md:w-48 md:bottom-0'>
+            <div className='absolute flex items-end right-4 md:w-48 md:bottom-0'>
               <Image src="/visual-01.png" width={260} height={192} />
             </div>
           </div>
         </div>
         <div className='visual-slide-item visual-slide-item02'>
           <div className='md:px-4 wrapper-740 relative h-48'>
-            <div className='text-2xl md:text-xl text-white font-extralight absolute top-7 left-0 md:left-4 z-20'>
+            <div className='text-2xl md:text-xl text-white font-extralight absolute top-7 left-4 z-20'>
               <p>밍호2019 장편소설 특집<br/>리디뷰 작성하고,<br/>경품도 받아가자!</p>
             </div>
-            <div className='absolute flex items-end right-0 md:right-4 md:w-48 md:bottom-0'>
+            <div className='absolute flex items-end right-4 md:w-48 md:bottom-0'>
               <Image src="/visual-02.png" width={260} height={192} />
             </div>
           </div>
         </div>
         <div className='visual-slide-item visual-slide-item03'>
           <div className='md:px-4 wrapper-740 relative h-48'>
-            <div className='text-2xl md:text-xl text-white font-extralight absolute top-7 left-0 md:left-4 z-20'>
+            <div className='text-2xl md:text-xl text-white font-extralight absolute top-7 left-4 z-20'>
               <p>우리 세대는 독서 세대!<br/>친구들과 함께 TURVooks.</p>
             </div>
-            <div className='absolute flex items-end right-0 md:right-4 md:w-48 md:bottom-0'>
+            <div className='absolute flex items-end right-4 md:w-48 md:bottom-0'>
               <Image src="/visual-03.png" width={260} height={192} />
             </div>
           </div>

@@ -1,12 +1,12 @@
 import Image from 'next/image'
-import Link from 'next/link';
+import Link from 'next/link'
 
 export default function Header() {
   return (
     <>
     <div className='h-16 pt-px box-content'></div>
     <header className='border-b-1 bg-white fixed top-0 left-0 right-0 z-50'>
-      <div className='h-16 wrapper-740 flex justify-between items-center md:px-4'>
+      <div className='h-16 wrapper-740 flex justify-between items-center px-4'>
         <h1>
           <Link href="/">
             <a>
