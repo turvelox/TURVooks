@@ -18,24 +18,26 @@ export default function Index() {
       <Header />
       <Visual />
       <main>
-        <div className='flex flex-row-reverse justify-between wrapper-740'>
-          <section className='mx-4 w-full max-w-sub'>
-            <article className='pb-8'>
+        <div className='flex flex-row-reverse justify-between wrapper-740 md:flex-col md:items-center'>
+          <section className='mx-4 w-full max-w-sub md:mx-0 md:px-4 md:max-w-[500px]'>
+            <article className='pb-8 md:pb-0'>
               <ConTitle title="추천 리더스 ." />
               <ConReaders />
             </article >
-            <article className='border-t-1 pb-8'>
+            <article className='pb-8 md:pb-0'>
               <ConTitle title="오늘의 추천 도서 ." />
               <ConSuggest />
             </article>
           </section>
-          <section className='mx-4 w-full'>
-            <ConTitle title="따끈따끈 리디뷰 ." />
-            <ul>
-              <li className='pb-5'>
-                <ConCard userId={`heritage_boy`} cardImg={`/card01.png`} cardTitle={title} cardCopy={copy} cardDate={`2022.05.24`} commentCount={`5`} bookImg={`/dal.png`} bookTitle={`달러구트 꿈 백화점`} />
-              </li>
-            </ul>
+          <section className='mx-4 w-full md:mx-0 md:px-4 md:max-w-[500px]'>
+            <article>
+              <ConTitle title="따끈따끈 리디뷰 ." />
+              <ul>
+                <li className='pb-5'>
+                  <ConCard userId={`heritage_boy`} cardImg={`/card01.png`} cardTitle={title} cardCopy={copy} cardDate={`2022.05.24`} commentCount={`5`} bookImg={`/dal.png`} bookTitle={`달러구트 꿈 백화점`} />
+                </li>
+              </ul>
+            </article>
           </section>
         </div>
       </main>

@@ -26,7 +26,7 @@ export default function Login() {
                         </span>
                     </div>
                     <Image src="/login-logo.png" width={156} height={60} />
-                    <form className='pt-14'>
+                    <form className='pt-14 px-[30px]'>
                         <input className='gray-input-style' placeholder='이메일' name='user_email' type="email" />
                         <input className='gray-input-style mt-1.5' placeholder='비밀번호' name='user_pwd' type="password" />
                         <button type='submit' className='green-btn-style mt-4'>로그인</button>
