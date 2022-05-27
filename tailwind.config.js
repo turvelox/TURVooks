@@ -7,6 +7,9 @@ module.exports = {
     screens: {
       'md': {'max': '740px'},
       // => @media (max-width: 740px) { ... }
+      'me': {'max': '600px'},
+      // => @media (max-width: 740px) { ... }
+      
     },
     extend: {
       keyframes: {
