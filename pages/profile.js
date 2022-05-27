@@ -6,7 +6,7 @@ import ProInfo from '../components/ProInfo'
 import ProVook from '../components/ProVook'
 import ProList from '../components/ProList'
 
-export default function Index() {
+export default function Profile() {
 
   return (
     <>
@@ -15,19 +15,19 @@ export default function Index() {
       <main>
         <div className='wrapper-740'>
 
-          <section className='w-full flex justify-between pb-[30px]'>
-            <article className='w-full px-4'>
+          <section className='flex pb-[30px] md:flex-col'>
+            <article className='w-[55%] px-4 md:w-full'>
               <ConTitle title={`turvelox .`} />
               <ProInfo />
             </article >
-            <article className='w-[280px] px-4'>
+            <article className='w-[45%] px-4 md:w-full'>
               <ConTitle title="Vook Pin ." />
               <ProVook />
             </article>
           </section>
 
-          <section className='w-full px-4 py-[30px] border-t-1'>
-            <article>
+          <section className='w-full py-[30px] border-t-1'>
+            <article className='text-center'>
                 <ProList />
             </article>
           </section>

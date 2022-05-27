@@ -68,26 +68,6 @@ export default function ConSuggest() {
                 </li>
             </ul>
         </div>
-        <style jsx>
-        {`
-            .book-line-01 {
-                width: 84px;
-                height: 1px;
-                background-color: #c5c5c5;
-            }
-            .book-line-02 {
-                width: 86px;
-                height: 1px;
-                background-color: #e5e5e5;
-            }
-            .book-line-03 {
-                width: 88px;
-                height: 1px;
-                background-color: #e5e5e5;
-            }
-
-        `}
-        </style>
         </>
     );
 }

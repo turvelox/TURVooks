@@ -215,6 +215,30 @@ body {
 .font-super-gray {
   color: #888888;
 }
+.book-line-01 {
+    width: 84px;
+    height: 1px;
+    background-color: #c5c5c5;
+}
+.book-line-02 {
+    width: 86px;
+    height: 1px;
+    background-color: #e5e5e5;
+}
+.book-line-03 {
+    width: 88px;
+    height: 1px;
+    background-color: #e5e5e5;
+}
+.dark-over {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  padding-bottom: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 /* 4줄 이상 생략 */
 .ellipsis-4 {
