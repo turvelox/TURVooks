@@ -19,7 +19,7 @@ export default function ConSuggest() {
         <div className='con-box px-[20px] py-[10px]'>
             <ul>
                 <li className='py-[10px]'>
-                    <Link href={`/`}>
+                    <Link href={`/main`}>
                         <a className='flex items-center'>
                             <span className='flex flex-col items-center'>
                                 <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
@@ -35,7 +35,7 @@ export default function ConSuggest() {
                     </Link>
                 </li>
                 <li className='py-[10px]'>
-                    <Link href={`/`}>
+                    <Link href={`/main`}>
                         <a className='flex items-center'>
                             <span className='flex flex-col items-center'>
                                 <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
@@ -51,7 +51,7 @@ export default function ConSuggest() {
                     </Link>
                 </li>
                 <li className='py-[10px]'>
-                    <Link href={`/`}>
+                    <Link href={`/main`}>
                         <a className='flex items-center'>
                             <span className='flex flex-col items-center'>
                                 <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>

@@ -5,6 +5,10 @@ export default function ProVook() {
     return (
       <>
       <div className='con-box px-[20px] py-[10px] min-h-[280px] md:min-h-fit relative'>
+        <span className='absolute top-[-25px] right-0 font-hidden' onClick={() => {console.log("edit!")}}>
+          <span className='pr-[5px] text-xs font-gray'>Edit</span>
+          <Image src='/edit-icon.png' width={12} height={12} />
+        </span>
         <Link href={`/`}>
             <div className='flex items-center py-[10px]'>
                 <span className='flex flex-col items-center'>
