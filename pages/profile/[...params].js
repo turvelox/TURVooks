@@ -14,25 +14,25 @@ export default function Profile() {
 
   return (
     <>
-      <Seo title={userId[0]} />
+      <Seo title={userId?userId[0]:""} />
       <Header />
       <main>
         <div className='wrapper-740'>
 
           <section className='flex pb-[30px] md:flex-col'>
             <article className='w-[55%] px-4 md:w-full'>
-              <ConTitle title={`${userId[0]} .`} />
-              <ProInfo userId={userId[0]} />
+              <ConTitle title={`${userId?userId[0]:""} .`} />
+              <ProInfo userId={userId?userId[0]:""} />
             </article >
             <article className='w-[45%] px-4 md:w-full'>
               <ConTitle title="Vook Pin ." />
-              <ProVook userId={userId[0]} />
+              <ProVook userId={userId?userId[0]:""} />
             </article>
           </section>
 
           <section className='w-full py-[30px] border-t-1'>
             <article className='text-center'>
-                <ProList />
+                <ProList userId={userId?userId[0]:""} />
             </article>
           </section>
 

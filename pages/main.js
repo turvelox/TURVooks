@@ -13,11 +13,21 @@ export default function main() {
   let contents = "";
 
   const [conList, setConList] = useState([]);
+  const [hereUcon, setHereUcon] = useState("");
+  const [uconList, setUconList] = useState("");
 
   useEffect(() => {
     contents = JSON.parse(localStorage.getItem("contents"));
     setConList(prevConList => prevConList.concat(contents));
+    setHereUcon(JSON.parse(localStorage.getItem("ucon")));
   }, []);
+
+  useEffect(() => {
+    const cutUcon = hereUcon ? hereUcon.filter(data => data !== null) : "";
+    setUconList(cutUcon);
+  }, [hereUcon]);
+
+  
 
 
   return (
@@ -42,9 +52,27 @@ export default function main() {
               <ConTitle title="따끈따끈 리디뷰 ." />
               <ul>
                 {
+                  uconList ? uconList.map((uconItem, index) => 
+                    <li className='pb-5' key={index}>
+                      <ConCard 
+                      viewLink={uconItem.link}
+                      img={uconItem.author_img}
+                      userId={uconItem.author}
+                      cardImg={uconItem.thum}
+                      cardTitle={uconItem.title}
+                      cardCopy={uconItem.copy}
+                      cardDate={uconItem.card_date}
+                      commentCount={`0`}
+                      bookImg={uconItem.book_thum}
+                      bookTitle={uconItem.book_title} />
+                    </li>
+                  ) : ""
+                }
+                {
                   conList.map((conItem, index) => 
                     <li className='pb-5' key={index}>
                       <ConCard 
+                      viewLink={conItem.link}
                       img={conItem.author_img}
                       userId={conItem.author}
                       cardImg={conItem.thum}
@@ -64,4 +92,14 @@ export default function main() {
       </main>
     </>
   )
+}
+
+
+export async function getServerSideProps(context) {
+  
+  
+
+  return {
+    props: {},
+  }
 }

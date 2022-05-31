@@ -48,7 +48,6 @@ export default function Join() {
 
     const joinUser = (e) => {
         localStorage.setItem("you", JSON.stringify(user));
-        
     };
 
 

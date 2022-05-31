@@ -4,10 +4,12 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 
-export default function Write() {
+export default function Write({ year, month, date }) {
 
     const router = useRouter();
     const bookBid = router.query.params;
+
+    const [you, setYou] = useState(''); 
 
     const [sug, setSug] = useState([
         {
@@ -32,8 +34,32 @@ export default function Write() {
             copy: "수면 과학의 역사 우리에게 필요한 수면량 좋은 수면의 메커니즘 신체의 일주기리듬 수면/기상 주기 호르몬과 수면 수면의 단계 꿈 좋은 잠과 나쁜 잠 좋은 수면 습관 들이기 수면 일기 슬기로운 수면 생활"
         }
     ]);
+    const [viewNum, setViewNum] = useState(3);
     const [indexSug, setIndexSug] = useState(0);
     const [selec, setSelec] = useState("");
+    const [contents, setContents] = useState([]);
+    const [isCheck, setIsCheck] = useState(false);
+    const [content, setContent] = useState(
+        {
+            link: localStorage.getItem("viewNum"),
+            author_img: "",
+            author: "",
+            title: "",
+            copy: "",
+            thum: "/carddefault.png",
+            book_thum: "",
+            book_title: "",
+            card_date: `${year}.${month+1}.${date}`
+        },
+    );
+
+    useEffect(() => {
+        const storageYou = JSON.parse(localStorage.getItem("you"));
+        setYou(storageYou);
+        const storageCon = JSON.parse(localStorage.getItem("ucon"));
+        setContents(contents.concat(storageCon));
+        setViewNum(localStorage.getItem("viewNum"));
+    }, []);
 
     useEffect(() => {
         setIndexSug(sug.findIndex(obj => obj.bid == bookBid?bookBid[0]:""));
@@ -43,13 +69,45 @@ export default function Write() {
         setSelec(sug[indexSug]);
     }, [indexSug]);
 
+    useEffect(() => {
+        setContent({
+            ...content,
+            author_img: you.userImg,
+            author: you.userId,
+            book_thum: selec?.img,
+            book_title: selec?.title
+        });
+    }, [selec]);
+    
+
+    const changeInput = (e) => {
+        const { name, value } = e.target;
+        setContent({
+          ...content,
+          [name]: value
+        });
+    };
+
+    console.log(contents);
+    const setterComplete = () => {
+        
+        setContents([...contents, content]);
+        setIsCheck(true);
+        setViewNum(prevViewNum => Number(prevViewNum)+1);
+    };
+    
+    const writeComplete = () => {
+        localStorage.setItem("ucon", JSON.stringify(contents));
+        localStorage.setItem("viewNum", viewNum);
+        location.href='/main';
+    };
+
   return (
     <>
       <Seo title={`글쓰기`} />
       <Header />
       <main>
         <div className='wrapper-740'>
-
             <section className='w-full'>
                 <article className='relative py-[30px] flex items-center me:flex-col'>
                     <div className='flex items-center w-[50%] px-[15px] me:w-[100%]'>
@@ -74,15 +132,24 @@ export default function Write() {
                 <form className='px-[15px] py-[30px] flex flex-col items-center border-t-1'>
                     <div className='border-all-1'>
                         <label htmlFor="write-thum" className='max-w-[400px] max-h-[250px]'><img src='/input-file.png' /></label>
-                        <input type="file" className='hidden' id="write-thum" name="write-thum" />
+                        <input type="file" className='hidden' id="write-thum" name="thum" />
                     </div>
                     <div className='mt-[15px] w-full'>
-                        <input className='gray-input-style' placeholder='제목' name='write-title' type="text" />
+                        <input className='gray-input-style' placeholder='제목' name='title' type="text" onChange={changeInput} value={content.title} />
                     </div>
                     <div className='mt-[15px] w-full'>
-                        <textarea className='gray-input-style' placeholder='' name='write-copy'></textarea>
+                        <textarea className='gray-textarea-style' placeholder='본문' name='copy' onChange={changeInput} value={content.copy}></textarea>
                     </div>
-                    <button type='submit' className='green-btn-style mt-4'>완료</button>
+                    <button type='button' className='green-btn-style mt-4' onClick={setterComplete}>완료</button>
+                    {
+                        isCheck ? <div className='fixed w-full top-0 z-10 flex justify-center align-middle'>
+                        <span className='dark-over min-h-[100vh]'></span>
+                        <div className='w-[300px] h-[150px] translate-y-[40vh] bg-white shadow-md text-center'>
+                            <p className='pt-[40px] pb-[15px]'>등록 되었습니다!</p>
+                            <button type='button' onClick={writeComplete} className='green-mini-btn-style'>확인</button>
+                        </div>
+                    </div> : ""
+                    }
                 </form>
             </section>
 
@@ -91,3 +158,17 @@ export default function Write() {
     </>
   )
 }
+
+export async function getServerSideProps(context) {
+
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth();
+    const date = now.getDate();
+
+    
+
+    return {
+      props: { year, month, date },
+    }
+  }

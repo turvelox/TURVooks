@@ -1,15 +1,37 @@
-import Seo from '../components/Seo'
-import Header from '../components/Header'
-import React, { useState } from 'react'
-import ConUser from '../components/ConUser'
+import Seo from '../../components/Seo'
+import Header from '../../components/Header'
+import React, { useState, useEffect } from 'react'
+import ConUser from '../../components/ConUser'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export default function View() {
 
+  const router = useRouter();
+  const viewId = router.query.params;
+
+  const [contents, setContents] = useState([]);
+  const [ucon, setUcon] = useState([]);
+  const [sumCon, setSumCon] = useState([]);
+  const [selec, setSelec] = useState("");
+
+  useEffect(() => {
+    setContents(JSON.parse(localStorage.getItem("contents")));
+    setUcon(JSON.parse(localStorage.getItem("ucon")));
+  }, []);
+
+  useEffect(() => {
+    setSumCon(contents.concat(ucon.filter(obj => obj !== null)));
+  }, [contents, ucon]);
+
+  useEffect(() => {
+    setSelec(sumCon[sumCon.findIndex(obj => obj.link == viewId ? viewId[0] : "")]);
+  }, [sumCon, viewId]);
+
   return (
     <>
-      <Seo title={`매일 "돈 없다"는 말 입에 달고 사는 친구들에게 추천하는 책`} />
+      <Seo title={selec ? selec.title : ""} />
       <Header />
       <main>
         <div className='wrapper-740'>
@@ -18,29 +40,27 @@ export default function View() {
             <div className='con-box w-full'>
 
               <article className='relative h-[300px] overflow-hidden text-white'>
-                <Image src={`/card01.png`} layout='fill' objectFit="cover" objectPosition="top" />
+                <Image src={selec ? selec.thum : "/carddefault.png"} layout='fill' objectFit="cover" objectPosition="top" />
                 <span className='dark-over'></span>
                 <div className='absolute top-0 left-0 z-10'>
-                  <ConUser userId={`turvelox`} />
+                  <ConUser userId={selec ? selec.author : ""} img={selec ? selec.author_img : "/user-default.png"} />
                 </div>
                 <div className='absolute top-[60px] left-[50%] translate-x-[-50%] z-10 text-center w-full px-[60px]'>
-                  <p className='text-sm'>{`2022. 05. 23`}</p>
-                  <p className='text-2xl pt-[15px]'>{`매일 "돈 없다"는 말 입에 달고 사는 친구들에게 추천하는 책`}</p>
+                  <p className='text-sm'>{selec ? selec.card_date : ""}</p>
+                  <p className='text-2xl pt-[15px]'>{selec ? selec.title : ""}</p>
                 </div>
                 <div className='absolute left-[10px] bottom-[10px] flex items-end z-10'>
                     <span className='mini-book w-[40px] h-[60px] relative'>
-                        <Image src={'/dal.png'} layout='fill' objectFit="cover" objectPosition="top" />
+                        <Image src={selec ? selec.book_thum : "/bookdefault.png"} layout='fill' objectFit="cover" objectPosition="top" />
                     </span>
                     <span className='mini-book-title font-medium mx-2.5 max-w-[600px] ellipsis-1 text-black'>
-                        {`달러구트 꿈 백화점`}
+                        {selec ? selec.book_title : ""}
                     </span>
                 </div>
               </article>
 
               <article className='p-[30px] text-sm view-contents md:p-[15px]'>
-                <p>서점에 잠시 들러 기분을 만끽하던중... 내 눈앞에 보이던 책이 한권 있었다. 해리포터 스러운 표지 디자인의 소설책 이였는데, 내 이목을 어찌나 끌던지 표지디자인에서 헤어나올수가 없었다. 우선 당장 책을 구매했다.</p>
-                <img src='/viewimg.png' />
-                <p>서점에 잠시 들러 기분을 만끽하던중... 내 눈앞에 보이던 책이 한권 있었다. 해리포터 스러운 표지 디자인의 소설책 이였는데, 내 이목을 어찌나 끌던지 표지디자인에서 헤어나올수가 없었다. 우선 당장 책을 구매했다.</p>
+                <p>{selec ? selec.copy : ""}</p>                
               </article>
 
               <article className='border-t-1 p-[30px] md:p-[15px]'>

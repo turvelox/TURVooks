@@ -5,9 +5,12 @@ import React, {useState, useEffect} from 'react'
 
 export default function Login() {
 
+    const [viewNum, setViewNum] = useState(3);
+ 
     const [contents, setContents] = useState(  // contents 기본 가데이터
         [
           {
+            link: "1",
             author_img: "/pf01.png",
             author: "heritage_boy",
             title: "꿈을 표현한 소설 중에 감히 최고라고 할 수 있다!",
@@ -18,6 +21,7 @@ export default function Login() {
             card_date: "2022.05.24"
           },
           {
+            link: "2",
             author_img: "/pf02.png",
             author: "karoiwi",
             title: "수면은 왜 중요한가.",
@@ -159,6 +163,7 @@ export default function Login() {
     useEffect(() => {
         localStorage.setItem("users", JSON.stringify(users));
         localStorage.setItem("contents", JSON.stringify(contents));
+        localStorage.setItem("viewNum", viewNum);
     }, []);
 
     const [login, setLogin] = useState({
