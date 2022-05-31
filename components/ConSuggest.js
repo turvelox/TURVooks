@@ -19,8 +19,8 @@ export default function ConSuggest() {
         <div className='con-box px-[20px] py-[10px]'>
             <ul>
                 <li className='py-[10px]'>
-                    <Link href={`/main`}>
-                        <a className='flex items-center'>
+                    <Link href={`https://book.naver.com/bookdb/book_detail.nhn?bid=22452725`}>
+                        <a target="_blank" className='flex items-center'>
                             <span className='flex flex-col items-center'>
                                 <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
                                 <span className='block w-[90px] h-[125px] border-all-1 mini-book relative'>
@@ -35,8 +35,8 @@ export default function ConSuggest() {
                     </Link>
                 </li>
                 <li className='py-[10px]'>
-                    <Link href={`/main`}>
-                        <a className='flex items-center'>
+                    <Link href={`https://book.naver.com/bookdb/book_detail.nhn?bid=21376212`}>
+                        <a target="_blank" className='flex items-center'>
                             <span className='flex flex-col items-center'>
                                 <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
                                 <span className='block w-[90px] h-[125px] border-all-1 mini-book relative'>
@@ -51,8 +51,8 @@ export default function ConSuggest() {
                     </Link>
                 </li>
                 <li className='py-[10px]'>
-                    <Link href={`/main`}>
-                        <a className='flex items-center'>
+                    <Link href={`https://book.naver.com/bookdb/book_detail.naver?bid=21403705`}>
+                        <a target="_blank" className='flex items-center'>
                             <span className='flex flex-col items-center'>
                                 <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
                                 <span className='block w-[90px] h-[125px] border-all-1 mini-book relative'>

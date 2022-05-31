@@ -3,26 +3,12 @@ import React, { useEffect, useState } from 'react'
 
 export default function ProInfo({ userId }) {
 
-  const [users, setUsers] = useState([
-    {
-      userEmail: "",
-      userId: "",
-      userPwd: "",
-      pwdCert: "",
-      userImg: "/user-default.png",
-      intro: "",
-      linker: 0,
-      linking: 0
-    }
-  ]);  // 로컬스토리지에 있는 user목록
-  const [you, setYou] = useState('');  // 로컬스토리지에 있는 새로 가입한 나의 계정
+  const [users, setUsers] = useState([]);
   const [userIndex, setUserIndex] = useState(0);
 
   useEffect(() => {
-    const lsUsers = JSON.parse(localStorage.getItem("users"));
-    const lsYou = JSON.parse(localStorage.getItem("you"));
-    setUsers(lsUsers);  // 로컬스토리지에서 user목록을 꺼내 담아줌
-    setYou(lsYou);  // 로컬스토리지에서 나의 계정을 꺼내 담아줌
+    const storageUsers = JSON.parse(localStorage.getItem("users"));
+    setUsers(storageUsers);
   }, []);
 
   useEffect(() => {

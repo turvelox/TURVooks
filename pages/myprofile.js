@@ -13,7 +13,7 @@ export default function Profile() {
 
   useEffect(() => {
     const lsYou = JSON.parse(localStorage.getItem("you"));
-    setYou(lsYou);  // 로컬스토리지에서 나의 계정을 꺼내 담아줌
+    setYou(lsYou);
   }, []);
 
   useEffect(() => {

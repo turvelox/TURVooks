@@ -7,6 +7,40 @@ import Link from 'next/link'
 
 export default function View() {
 
+    const [keyword, setKeyword] = useState("");
+    const [sug, setSug] = useState([
+        {
+            link: "https://book.naver.com/bookdb/book_detail.nhn?bid=22452725",
+            bid: "22452725",
+            img: '/suggest01.png',
+            title: "독일은 왜 잘하는가 : 성숙하고 부강한 나라의 비밀",
+            author: "존 캠프너",
+            view: 5
+        },
+        {
+            link: "https://book.naver.com/bookdb/book_detail.nhn?bid=21376212",
+            bid: "21376212",
+            img: '/suggest02.png',
+            title: "이것은 작은 브랜드를 위한 책",
+            author: "이근상",
+            view: 2
+        },
+        {
+            link: "https://book.naver.com/bookdb/book_detail.naver?bid=21403705",
+            bid: "21403705",
+            img: '/suggest03.png',
+            title: "수면의 과학",
+            author: "헤더 다월-스미스",
+            view: 0
+        }
+    ]);
+
+
+    const changeInput = (e) => {
+        setKeyword(e.target.value);
+    };
+
+
   return (
     <>
       <Seo title={`도서검색`} />
@@ -16,82 +50,43 @@ export default function View() {
 
         <section className='flex justify-center p-[15px]'>
             <div className='relative w-full max-w-[400px]'>
-                <input className='gray-input-style' placeholder='도서명' name='comment-text' type="text" />
-                <button className='gray-mini-btn-style absolute top-[5px] right-[5px]' type='submit'>검색</button>
+                <input className='gray-input-style' placeholder='도서명' name='comment-text' type="text" onChange={changeInput} value={keyword} />
             </div>
         </section>
 
         <section>
             <div className='text-center px-[15px] py-[30px]'>
-                <p className='text-lg'>{`'꿈'으로 검색한 도서 3건`}</p>
+                <p className='text-lg'>{`${keyword == "" ? '오늘의 추천 도서' : `'${keyword}'으로 검색한 도서 0건`}`}</p>
             </div>
             <ul className='w-full flex justify-start flex-wrap'>
-                <li className='px-[15px] w-[50%] me:px-[20px] me:w-[100%]'>
-                    <div className='relative'>
-                        <Link href={`/`}>
-                            <div className='flex items-center py-[10px]'>
-                                <span className='flex flex-col items-center'>
-                                    <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
-                                    <span className='block w-[90px] h-[125px] border-all-1 mini-book relative'>
-                                        <Image src={`/suggest01.png`} layout='fill' objectFit="cover" objectPosition="top" />
-                                    </span>
-                                </span>
-                                <span className='pl-[15px]'>
-                                    <p className='text-sm font-bold ellipsis-4'>{`독일은 왜 잘하는가 : 성숙하고 부강한 나라의 비밀`}</p>
-                                    <p className='text-xs pt-[15px]'>{`존 캠프너`}</p>
-                                    <p className='flex font-hidden items-center pt-[10px]'><img src='/view-count.png' /><span className='font-green text-xs ml-[5px]'>{`5`}</span></p>
-                                </span>
+                {
+                    keyword == "" ?
+                    sug.map((item, index) => 
+                        <li className='px-[15px] w-[50%] me:px-[20px] me:w-[100%]' key={index}>
+                            <div className='relative'>
+                                <a target="_blank" href={item.link}>
+                                    <div className='flex items-center py-[10px]'>
+                                        <span className='flex flex-col items-center'>
+                                            <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
+                                            <span className='block w-[90px] h-[125px] border-all-1 mini-book relative'>
+                                                <Image src={item.img} layout='fill' objectFit="cover" objectPosition="top" />
+                                            </span>
+                                        </span>
+                                        <span className='pl-[15px]'>
+                                            <p className='text-sm font-bold ellipsis-4'>{item.title}</p>
+                                            <p className='text-xs pt-[15px]'>{item.author}</p>
+                                            <p className='flex font-hidden items-center pt-[10px]'><img src='/view-count.png' /><span className='font-green text-xs ml-[5px]'>{item.view}</span></p>
+                                        </span>
+                                    </div>
+                                </a>
+                                <Link href={`/write/${item.bid}`}>
+                                    <a className='green-mini-btn-style absolute bottom-[15px] left-[13px]' type='button'>글쓰기</a>
+                                </Link>
                             </div>
-                        </Link>
-                        <Link href={`/`}>
-                            <a className='green-mini-btn-style absolute bottom-[15px] left-[13px]' type='button'>글쓰기</a>
-                        </Link>
-                    </div>
-                </li>
-                <li className='px-[15px] w-[50%] me:px-[20px] me:w-[100%]'>
-                    <div className='relative'>
-                        <Link href={`/`}>
-                            <div className='flex items-center py-[10px]'>
-                                <span className='flex flex-col items-center'>
-                                    <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
-                                    <span className='block w-[90px] h-[125px] border-all-1 mini-book relative'>
-                                        <Image src={`/suggest01.png`} layout='fill' objectFit="cover" objectPosition="top" />
-                                    </span>
-                                </span>
-                                <span className='pl-[15px]'>
-                                    <p className='text-sm font-bold ellipsis-4'>{`독일은 왜 잘하는가 : 성숙하고 부강한 나라의 비밀`}</p>
-                                    <p className='text-xs pt-[15px]'>{`존 캠프너`}</p>
-                                    <p className='flex font-hidden items-center pt-[10px]'><img src='/view-count.png' /><span className='font-green text-xs ml-[5px]'>{`5`}</span></p>
-                                </span>
-                            </div>
-                        </Link>
-                        <Link href={`/`}>
-                            <a className='green-mini-btn-style absolute bottom-[15px] left-[13px]' type='button'>글쓰기</a>
-                        </Link>
-                    </div>
-                </li>
-                <li className='px-[15px] w-[50%] me:px-[20px] me:w-[100%]'>
-                    <div className='relative'>
-                        <Link href={`/`}>
-                            <div className='flex items-center py-[10px]'>
-                                <span className='flex flex-col items-center'>
-                                    <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
-                                    <span className='block w-[90px] h-[125px] border-all-1 mini-book relative'>
-                                        <Image src={`/suggest01.png`} layout='fill' objectFit="cover" objectPosition="top" />
-                                    </span>
-                                </span>
-                                <span className='pl-[15px]'>
-                                    <p className='text-sm font-bold ellipsis-4'>{`독일은 왜 잘하는가 : 성숙하고 부강한 나라의 비밀`}</p>
-                                    <p className='text-xs pt-[15px]'>{`존 캠프너`}</p>
-                                    <p className='flex font-hidden items-center pt-[10px]'><img src='/view-count.png' /><span className='font-green text-xs ml-[5px]'>{`5`}</span></p>
-                                </span>
-                            </div>
-                        </Link>
-                        <Link href={`/`}>
-                            <a className='green-mini-btn-style absolute bottom-[15px] left-[13px]' type='button'>글쓰기</a>
-                        </Link>
-                    </div>
-                </li>
+                        </li>
+                    ) : <p></p>
+                }
+                
             </ul>
         </section>
 

@@ -26,7 +26,7 @@ export default function Profile() {
             </article >
             <article className='w-[45%] px-4 md:w-full'>
               <ConTitle title="Vook Pin ." />
-              <ProVook />
+              <ProVook userId={userId[0]} />
             </article>
           </section>
 

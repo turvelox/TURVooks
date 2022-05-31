@@ -14,7 +14,12 @@ export default function Join() {
         userImg: "/user-default.png",
         intro: "",
         linker: 0,
-        linking: 0
+        linking: 0,
+        vookLink: "15372760",
+        vookImg: "/bookdefault.png",
+        vookTitle: "나만의 Vook을 소개해주세요!",
+        vookAuthor: "",
+        vookCopy: ""
     });
     const { userEmail, userId, userPwd, pwdCert } = user;
 

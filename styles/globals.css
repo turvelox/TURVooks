@@ -239,6 +239,15 @@ body {
   left: 0;
 }
 
+/* 5줄 이상 생략 */
+.ellipsis-5 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
 /* 4줄 이상 생략 */
 .ellipsis-4 {
   overflow: hidden;

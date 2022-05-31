@@ -6,9 +6,13 @@ export default function MyProInfo() {
   const [you, setYou] = useState(''); 
 
   useEffect(() => {
-    const lsYou = JSON.parse(localStorage.getItem("you"));
-    setYou(lsYou);  // 로컬스토리지에서 나의 계정을 꺼내 담아줌
+    const storageYou = JSON.parse(localStorage.getItem("you"));
+    setYou(storageYou);
   }, []);
+
+  const imReady = () => {
+    alert("준비중입니다...");
+  };
 
 
     return (
@@ -17,7 +21,7 @@ export default function MyProInfo() {
 
             <div className="relative rounded-full border-all-1 font-hidden overflow-hidden w-[60px] h-[60px] min-w-[60px]">
               <Image src={`/user-default.png`} layout='fill' objectFit="cover" objectPosition="center" />
-              <span className='absolute bottom-0 left-0 block bg-black/60 w-full h-[20px] text-center pt-[4px]'>
+              <span onClick={imReady} className='absolute bottom-0 left-0 block bg-black/60 w-full h-[20px] text-center pt-[4px]'>
                 <Image src={`/photo_edit.png`} width={12} height={10} />
               </span>
             </div>
