@@ -23,6 +23,8 @@ export default function ProList({ userId }) {
     sumCon !== null ? 
     setSelec(sumCon.filter(obj => obj.author == userId)) : console.log("null");
   }, [sumCon, userId]);
+  console.log(contents);
+  console.log(ucon);
   console.log(sumCon);
   console.log(userId);
   console.log(selec);
