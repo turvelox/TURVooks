@@ -22,7 +22,8 @@ export default function View() {
   }, []);
 
   useEffect(() => {
-    setSumCon(contents.concat(ucon.filter(obj => obj !== null)));
+    contents !== null ? 
+    setSumCon(contents.concat(ucon.filter(obj => obj !== null))) : console.log("null"); 
   }, [contents, ucon]);
 
   useEffect(() => {

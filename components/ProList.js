@@ -15,11 +15,13 @@ export default function ProList({ userId }) {
   }, []);
 
   useEffect(() => {
-    setSumCon(contents.concat(ucon.filter(obj => obj !== null)));
+    ucon !== null ? 
+    setSumCon(contents.concat(ucon.filter(obj => obj !== null))) : console.log("null");
   }, [contents, ucon]);
 
   useEffect(() => {
-    setSelec(sumCon.filter(obj => obj.author == userId));
+    sumCon !== null ? 
+    setSelec(sumCon.filter(obj => obj.author == userId)) : console.log("null");
   }, [sumCon, userId]);
 
   console.log(selec);
