@@ -28,7 +28,7 @@ export default function View() {
   }, [contents, ucon]);
 
   useEffect(() => {
-    setSelec(sumCon[sumCon.findIndex(obj => obj.link == viewId ? viewId[0] : "0")]);
+    setSelec(sumCon[sumCon.findIndex(obj => obj.link == viewId !== undefined ? viewId[0] : "0")]);
   }, [sumCon, viewId]);
 
   console.log(viewId, "viewId");
