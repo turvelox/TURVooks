@@ -20,9 +20,9 @@ export default function MyProInfo() {
           <div className="flex p-[20px] ">
 
             <div className="relative rounded-full border-all-1 font-hidden overflow-hidden w-[60px] h-[60px] min-w-[60px]">
-              <Image src={`/user-default.png`} layout='fill' objectFit="cover" objectPosition="center" />
+              <Image src={`/user-default.png`} layout='fill' objectFit="cover" objectPosition="center" alt="" />
               <span onClick={imReady} className='absolute bottom-0 left-0 block bg-black/60 w-full h-[20px] text-center pt-[4px]'>
-                <Image src={`/photo_edit.png`} width={12} height={10} />
+                <Image src={`/photo_edit.png`} width={12} height={10} alt="" />
               </span>
             </div>
             
