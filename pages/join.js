@@ -48,6 +48,7 @@ export default function Join() {
 
     const joinUser = (e) => {
         localStorage.setItem("you", JSON.stringify(user));
+        location.href='/';
     };
 
 
@@ -60,7 +61,7 @@ export default function Join() {
             <div className='flex-1 margin-15 flex justify-center'>
                 <div className={`relative text-center con-box py-14 max-w-sm`}>
                     <Image src="/login-logo.png" width={156} height={60} alt="" />
-                    <form className='pt-14 px-[30px]' action='/' method='post'>
+                    <form className='pt-14 px-[30px]'>
                         <div className='relative'>
                             <input className='gray-input-style' placeholder='이메일' name='userEmail' type="email" onChange={changeInput} value={userEmail} />
                         </div>
@@ -74,7 +75,7 @@ export default function Join() {
                             <input className='gray-input-style' placeholder='비밀번호 확인' name='pwdCert' type="password" onChange={changeInput} value={pwdCert} />
                             {pwdMsg ? <span className='font-green text-sm'>비밀번호가 일치하지 않습니다.</span> : ""}
                         </div>
-                        {userEmail && userId && pwdPass ? <button type='submit' className='green-btn-style mt-4' onClick={joinUser}>등록</button> : <button type='button' className='gray-btn-style mt-4'>등록</button>}
+                        {userEmail && userId && pwdPass ? <button type='button' className='green-btn-style mt-4' onClick={joinUser}>등록</button> : <button type='button' className='gray-btn-style mt-4'>등록</button>}
                     </form>
                 </div>
             </div>
