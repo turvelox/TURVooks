@@ -14,7 +14,8 @@ export default function View() {
   const [contents, setContents] = useState([]);
   const [ucon, setUcon] = useState([]);
   const [sumCon, setSumCon] = useState([]);
-  const [selec, setSelec] = useState("");
+  const [selec, setSelec] = useState([]);
+  const emArray = [];
 
   useEffect(() => {
     setContents(JSON.parse(localStorage.getItem("contents")));
@@ -22,12 +23,12 @@ export default function View() {
   }, []);
 
   useEffect(() => {
-    contents !== null ? 
-    setSumCon(contents.concat(ucon.filter(obj => obj !== null))) : console.log("null"); 
+    ucon !== null ? 
+    setSumCon(contents.concat(ucon.filter(obj => obj !== null))) : setSumCon(contents.concat(emArray)); 
   }, [contents, ucon]);
 
   useEffect(() => {
-    setSelec(sumCon[sumCon.findIndex(obj => obj.link == viewId ? viewId[0] : "")]);
+    setSelec(sumCon[sumCon.findIndex(obj => obj.link == viewId ? viewId[0] : "0")]);
   }, [sumCon, viewId]);
 
   return (

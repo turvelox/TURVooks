@@ -9,7 +9,6 @@ export default function ProList({ userId }) {
   const [sumCon, setSumCon] = useState([]);
   const [selec, setSelec] = useState([]);
   const emArray = [];
-  const [conTest, setConTest] = useState([]);
 
   useEffect(() => {
     setContents(JSON.parse(localStorage.getItem("contents")));
@@ -25,11 +24,6 @@ export default function ProList({ userId }) {
     sumCon !== null ? 
     setSelec(sumCon.filter(obj => obj.author == userId)) : console.log("null 입니다");
   }, [sumCon, userId]);
-  console.log(contents, "contents");
-  console.log(ucon, "ucon");
-  console.log(sumCon, "sumCon");
-  console.log(userId);
-  console.log(selec);
 
     return (
       <ul className='flex flex-wrap justify-start'>
