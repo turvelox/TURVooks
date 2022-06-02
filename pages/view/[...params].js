@@ -32,7 +32,10 @@ export default function View() {
   }, [sumCon, viewId]);
 
   console.log(viewId, "viewId");
+  console.log(viewId[0], "viewId[0]");
+  console.log(sumCon, "sumCon");
   console.log(selec, "selec");
+  console.log("-------------------");
   
   return (
     <>
