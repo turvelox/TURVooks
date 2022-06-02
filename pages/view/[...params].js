@@ -15,6 +15,7 @@ export default function View() {
   const [ucon, setUcon] = useState([]);
   const [sumCon, setSumCon] = useState([]);
   const [selec, setSelec] = useState([]);
+  const [selecNum, setSelecNum] = useState(0);
   const emArray = [];
 
   useEffect(() => {
@@ -27,13 +28,20 @@ export default function View() {
     setSumCon(contents.concat(ucon.filter(obj => obj !== null))) : setSumCon(contents.concat(emArray)); 
   }, [contents, ucon]);
 
+
   useEffect(() => {
-    setSelec(sumCon[sumCon.findIndex(obj => obj.link == viewId !== undefined ? viewId[0] : "0")]);
+    sumCon !== null ?
+    setSelecNum(sumCon.findIndex(obj => obj.link == viewId !== undefined ? viewId[0] : "0")) : setSelecNum(0);
   }, [sumCon, viewId]);
+
+  useEffect(() => {
+    setSelec(sumCon[selecNum]);
+  }, [sumCon, selecNum, viewId]);
 
   console.log(viewId, "viewId");
   console.log(viewId !== undefined ? viewId[0] : "undefined");
   console.log(sumCon, "sumCon");
+  console.log(selecNum, "selecNum");
   console.log(selec, "selec");
   console.log("-------------------");
   
