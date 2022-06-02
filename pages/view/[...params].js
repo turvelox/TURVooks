@@ -31,6 +31,9 @@ export default function View() {
     setSelec(sumCon[sumCon.findIndex(obj => obj.link == viewId ? viewId[0] : "0")]);
   }, [sumCon, viewId]);
 
+  console.log(viewId, "viewId");
+  console.log(selec, "selec");
+  
   return (
     <>
       <Seo title={selec ? selec.title : ""} />
