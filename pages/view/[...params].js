@@ -36,13 +36,6 @@ export default function View() {
   useEffect(() => {
     setSelec(sumCon[selecNum]);
   }, [sumCon, selecNum, viewId]);
-
-  console.log(viewId, "viewId");
-  console.log(viewId !== undefined ? viewId[0] : "undefined");
-  console.log(sumCon, "sumCon");
-  console.log(selecNum, "selecNum");
-  console.log(selec, "selec");
-  console.log("-------------------");
   
   return (
     <>
