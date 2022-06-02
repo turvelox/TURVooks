@@ -8,6 +8,7 @@ export default function ProList({ userId }) {
   const [ucon, setUcon] = useState([]);
   const [sumCon, setSumCon] = useState([]);
   const [selec, setSelec] = useState([]);
+  const emArray = [];
 
   useEffect(() => {
     setContents(JSON.parse(localStorage.getItem("contents")));
@@ -16,12 +17,12 @@ export default function ProList({ userId }) {
 
   useEffect(() => {
     ucon !== null ? 
-    setSumCon(contents.concat(ucon.filter(obj => obj !== null))) : console.log("null");
+    setSumCon(contents.concat(ucon.filter(obj => obj !== null))) : setSumCon(emArray);
   }, [contents, ucon]);
 
   useEffect(() => {
     sumCon !== null ? 
-    setSelec(sumCon.filter(obj => obj.author == userId)) : console.log("null");
+    setSelec(sumCon.filter(obj => obj.author == userId)) : console.log("null 입니다");
   }, [sumCon, userId]);
   console.log(contents);
   console.log(ucon);
