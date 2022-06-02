@@ -8,7 +8,7 @@ import ConReaders from '../components/ConReaders'
 import ConSuggest from '../components/ConSuggest'
 
 
-export default function main() {
+export default function Main() {
 
   let contents = "";
 
@@ -92,14 +92,4 @@ export default function main() {
       </main>
     </>
   )
-}
-
-
-export async function getServerSideProps(context) {
-  
-  
-
-  return {
-    props: {},
-  }
 }

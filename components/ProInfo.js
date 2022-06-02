@@ -21,7 +21,7 @@ export default function ProInfo({ userId }) {
           <div className="flex p-[20px] ">
 
             <div className="relative rounded-full border-all-1 font-hidden overflow-hidden w-[60px] h-[60px] min-w-[60px]">
-              <Image src={users?.[userIndex]?.userImg || '/user-default.png'} layout='fill' objectFit="cover" objectPosition="center" />
+              <Image src={users?.[userIndex]?.userImg || '/user-default.png'} layout='fill' objectFit="cover" objectPosition="center" alt="" />
             </div>
             
             <div className='flex justify-evenly pl-[20px] w-full max-w-[390px]'>

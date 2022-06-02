@@ -59,7 +59,7 @@ export default function Join() {
           <section className='flex items-center min-h-screen wrapper-740'>
             <div className='flex-1 margin-15 flex justify-center'>
                 <div className={`relative text-center con-box py-14 max-w-sm`}>
-                    <Image src="/login-logo.png" width={156} height={60} />
+                    <Image src="/login-logo.png" width={156} height={60} alt="" />
                     <form className='pt-14 px-[30px]' action='/' method='post'>
                         <div className='relative'>
                             <input className='gray-input-style' placeholder='이메일' name='userEmail' type="email" onChange={changeInput} value={userEmail} />

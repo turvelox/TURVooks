@@ -40,7 +40,7 @@ export default function View() {
             <div className='con-box w-full'>
 
               <article className='relative h-[300px] overflow-hidden text-white'>
-                <Image src={selec ? selec.thum : "/carddefault.png"} layout='fill' objectFit="cover" objectPosition="top" />
+                <Image src={selec ? selec.thum : "/carddefault.png"} layout='fill' objectFit="cover" objectPosition="top" alt="" />
                 <span className='dark-over'></span>
                 <div className='absolute top-0 left-0 z-10'>
                   <ConUser userId={selec ? selec.author : ""} img={selec ? selec.author_img : "/user-default.png"} />
@@ -51,7 +51,7 @@ export default function View() {
                 </div>
                 <div className='absolute left-[10px] bottom-[10px] flex items-end z-10'>
                     <span className='mini-book w-[40px] h-[60px] relative'>
-                        <Image src={selec ? selec.book_thum : "/bookdefault.png"} layout='fill' objectFit="cover" objectPosition="top" />
+                        <Image src={selec ? selec.book_thum : "/bookdefault.png"} layout='fill' objectFit="cover" objectPosition="top" alt="" />
                     </span>
                     <span className='mini-book-title font-medium mx-2.5 max-w-[600px] ellipsis-1 text-black'>
                         {selec ? selec.book_title : ""}
@@ -67,7 +67,7 @@ export default function View() {
 
                 <div className='flex items-center pb-[30px]'>
                   <div className='rounded-full w-[30px] h-[30px] border-all-1 overflow-hidden'>
-                    <img src={`/user-default.png`} />
+                    <img src={`/user-default.png`} alt="" />
                   </div>
                   <div className='relative pl-[10px] w-full'>
                     <input className='gray-input-style' placeholder='100자 이내' name='comment-text' type="text" />
@@ -79,7 +79,7 @@ export default function View() {
                   <li className='py-[10px]'>
                     <div className='flex'>
                       <div className='rounded-full w-[20px] h-[20px] border-all-1 overflow-hidden'>
-                        <img src={`/user-default.png`} />
+                        <img src={`/user-default.png`} alt="" />
                       </div>
                       <Link href={`/profile/gradiation99`}>
                           <a className='text-xs ml-2.5'>{`gradiation99`}</a>

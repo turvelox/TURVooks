@@ -24,7 +24,7 @@ export default function ConSuggest() {
                             <span className='flex flex-col items-center'>
                                 <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
                                 <span className='block w-[90px] h-[125px] border-all-1 mini-book relative'>
-                                    <Image src={sugImg[0]} layout='fill' objectFit="cover" objectPosition="top" />
+                                    <Image src={sugImg[0]} layout='fill' objectFit="cover" objectPosition="top" alt="" />
                                 </span>
                             </span>
                             <span className='pl-[15px]'>
@@ -40,7 +40,7 @@ export default function ConSuggest() {
                             <span className='flex flex-col items-center'>
                                 <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
                                 <span className='block w-[90px] h-[125px] border-all-1 mini-book relative'>
-                                    <Image src={sugImg[1]} layout='fill' objectFit="cover" objectPosition="top" />
+                                    <Image src={sugImg[1]} layout='fill' objectFit="cover" objectPosition="top" alt="" />
                                 </span>
                             </span>
                             <span className='pl-[15px]'>
@@ -56,7 +56,7 @@ export default function ConSuggest() {
                             <span className='flex flex-col items-center'>
                                 <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
                                 <span className='block w-[90px] h-[125px] border-all-1 mini-book relative'>
-                                    <Image src={sugImg[2]} layout='fill' objectFit="cover" objectPosition="top" />
+                                    <Image src={sugImg[2]} layout='fill' objectFit="cover" objectPosition="top" alt="" />
                                 </span>
                             </span>
                             <span className='pl-[15px]'>

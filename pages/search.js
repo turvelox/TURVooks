@@ -64,18 +64,18 @@ export default function View() {
                     sug.map((item, index) => 
                         <li className='px-[15px] w-[50%] me:px-[20px] me:w-[100%]' key={index}>
                             <div className='relative'>
-                                <a target="_blank" href={item.link}>
+                                <a target="_blank" rel="noopener noreferrer" href={item.link}>
                                     <div className='flex items-center py-[10px]'>
                                         <span className='flex flex-col items-center'>
                                             <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
                                             <span className='block w-[90px] h-[125px] border-all-1 mini-book relative'>
-                                                <Image src={item.img} layout='fill' objectFit="cover" objectPosition="top" />
+                                                <Image src={item.img} layout='fill' objectFit="cover" objectPosition="top" alt="" />
                                             </span>
                                         </span>
                                         <span className='pl-[15px]'>
                                             <p className='text-sm font-bold ellipsis-4'>{item.title}</p>
                                             <p className='text-xs pt-[15px]'>{item.author}</p>
-                                            <p className='flex font-hidden items-center pt-[10px]'><img src='/view-count.png' /><span className='font-green text-xs ml-[5px]'>{item.view}</span></p>
+                                            <p className='flex font-hidden items-center pt-[10px]'><img src='/view-count.png' alt="" /><span className='font-green text-xs ml-[5px]'>{item.view}</span></p>
                                         </span>
                                     </div>
                                 </a>

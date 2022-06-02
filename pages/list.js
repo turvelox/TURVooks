@@ -21,13 +21,13 @@ export default function View() {
                         <span className='flex flex-col items-center'>
                             <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
                             <span className='block w-[90px] h-[125px] border-all-1 mini-book relative'>
-                                <Image src={`/suggest01.png`} layout='fill' objectFit="cover" objectPosition="top" />
+                                <Image src={`/suggest01.png`} layout='fill' objectFit="cover" objectPosition="top" alt="" />
                             </span>
                         </span>
                         <span className='pl-[15px]'>
                             <p className='text-sm font-bold ellipsis-4'>{`독일은 왜 잘하는가 : 성숙하고 부강한 나라의 비밀`}</p>
                             <p className='text-xs pt-[15px]'>{`존 캠프너`}</p>
-                            <p className='flex font-hidden items-center pt-[10px]'><img src='/view-count.png' /><span className='font-green text-xs ml-[5px]'>{`5`}</span></p>
+                            <p className='flex font-hidden items-center pt-[10px]'><img src='/view-count.png' alt="" /><span className='font-green text-xs ml-[5px]'>{`5`}</span></p>
                         </span>
                     </div>
                     <div className='pt-[15px]'>

@@ -19,12 +19,12 @@ export default function ProVook({ userId }) {
     return (
       <>
       <div className='con-box px-[20px] py-[10px] min-h-[280px] md:min-h-fit relative'>
-        <a target="_blank" href={`https://book.naver.com/bookdb/book_detail.naver?bid=${users?.[userIndex]?.vookLink}`}>
+        <a target="_blank" rel="noopener noreferrer" href={`https://book.naver.com/bookdb/book_detail.naver?bid=${users?.[userIndex]?.vookLink}`}>
             <div className='flex items-center py-[10px]'>
                 <span className='flex flex-col items-center'>
                     <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
                     <span className='block w-[90px] h-[125px] border-all-1 mini-book relative'>
-                        <Image src={users?.[userIndex]?.vookImg || '/bookdefault.png'} layout='fill' objectFit="cover" objectPosition="top" />
+                        <Image src={users?.[userIndex]?.vookImg || '/bookdefault.png'} layout='fill' objectFit="cover" objectPosition="top" alt="" />
                     </span>
                 </span>
                 <span className='pl-[15px]'>

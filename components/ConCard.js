@@ -9,10 +9,10 @@ export default function ConCard({ userId, img, imgw, imgh, viewLink, cardImg, ca
         <Link href={`/view/${viewLink}`}>
             <a>
             <div className='relative overflow-hidden min-h-[250px] max-h-[250px] block'>
-                <Image src={cardImg} layout='fill' objectFit="cover" objectPosition="center" />
+                <Image src={cardImg} layout='fill' objectFit="cover" objectPosition="center" alt="" />
                 <div className='absolute left-[10px] bottom-[10px] flex items-end'>
                     <span className='mini-book w-[40px] h-[60px] relative'>
-                        <Image src={bookImg} layout='fill' objectFit="cover" objectPosition="top" />
+                        <Image src={bookImg} layout='fill' objectFit="cover" objectPosition="top" alt="" />
                     </span>
                     <span className='mini-book-title font-medium mx-2.5 max-w-[300px] ellipsis-1'>
                         {bookTitle}
@@ -23,7 +23,7 @@ export default function ConCard({ userId, img, imgw, imgh, viewLink, cardImg, ca
                 <p className='ellipsis-1 text-base font-medium'>{cardTitle}</p>
                 <p className='ellipsis-3 text-xs font-gray pt-4'>{cardCopy}</p>
                 <div className='pt-4 text-xs font-super-gray flex items-center'>
-                <span className='pr-2.5'>{cardDate}</span><Image src="/comment-icon.png" width={16} height={15} /><span className='pl-1'>{commentCount}</span>
+                <span className='pr-2.5'>{cardDate}</span><Image src="/comment-icon.png" width={16} height={15} alt="" /><span className='pl-1'>{commentCount}</span>
                 </div>
             </div>
             

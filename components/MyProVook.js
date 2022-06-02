@@ -18,14 +18,14 @@ export default function ProVook() {
       <div className='con-box px-[20px] py-[10px] min-h-[280px] md:min-h-fit relative'>
         <span onClick={imReady} className='absolute top-[-25px] right-0 font-hidden'>
           <span className='pr-[5px] text-xs font-gray'>Edit</span>
-          <Image src='/edit-icon.png' width={12} height={12} />
+          <Image src='/edit-icon.png' width={12} height={12} alt="" />
         </span>
-        <a target="_blank" href={`https://book.naver.com/bookdb/book_detail.naver?bid=${you.vookLink}`}>
+        <a target="_blank" rel="noopener noreferrer" href={`https://book.naver.com/bookdb/book_detail.naver?bid=${you.vookLink}`}>
             <div className='flex items-center py-[10px]'>
                 <span className='flex flex-col items-center'>
                     <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
                     <span className='block w-[90px] h-[125px] border-all-1 mini-book relative'>
-                        <Image src={you.vookImg ? you.vookImg : '/bookdefault.png'} layout='fill' objectFit="cover" objectPosition="top" />
+                        <Image src={you.vookImg ? you.vookImg : '/bookdefault.png'} layout='fill' objectFit="cover" objectPosition="top" alt="" />
                     </span>
                 </span>
                 <span className='pl-[15px]'>

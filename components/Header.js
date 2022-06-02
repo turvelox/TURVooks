@@ -12,7 +12,7 @@ export default function Header() {
           <Link href="/main">
             <a>
               <span className='font-hidden'>TURVooks.</span>
-              <Image src="/header-logo.png" width={77} height={31} />
+              <Image src="/header-logo.png" width={77} height={31} alt="" />
             </a>
           </Link>
         </h1>
@@ -22,7 +22,7 @@ export default function Header() {
               <Link href="/search">
                 <a >
                   <span className='font-hidden'>도서검색</span>
-                  <Image src="/header-search.png" width={15} height={15} />
+                  <Image src="/header-search.png" width={15} height={15} alt="" />
                 </a>
               </Link>
             </li>
@@ -30,7 +30,7 @@ export default function Header() {
               <Link href={`/myprofile/`}>
                 <a >
                   <span className='font-hidden'>프로필</span>
-                  <Image src="/header-profile.png" width={15} height={15} />
+                  <Image src="/header-profile.png" width={15} height={15} alt="" />
                 </a>
               </Link>
             </li>

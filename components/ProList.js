@@ -31,14 +31,14 @@ export default function ProList({ userId }) {
           <li className='m-[0.5%] w-[32.3%] relative' key={index}>
             <Link href={`/view/${item.link}`}>
               <div className='relative pb-[100%]'>
-                <Image src={item.thum} layout='fill' objectFit="cover" objectPosition="top" />
+                <Image src={item.thum} layout='fill' objectFit="cover" objectPosition="top" alt="" />
                 <span className='dark-over'></span>
                 <div className='absolute left-[0px] top-[15px] z-10'>
                   <p className='text-white font-bold text-lg px-[15px] text-left md:font-medium md:text-sm'>{item.title}</p>
                 </div>
                 <div className='absolute right-[10px] bottom-[10px] z-10 flex'>
                     <span className='mini-book w-[40px] h-[60px] relative md:w-[30px] md:h-[45px]'>
-                        <Image src={item.book_thum} layout='fill' objectFit="cover" objectPosition="top" />
+                        <Image src={item.book_thum} layout='fill' objectFit="cover" objectPosition="top" alt="" />
                     </span>
                 </div>
               </div>

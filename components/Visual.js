@@ -61,7 +61,7 @@ export default function Visual() {
               <p>독서왕 정아영 아나운서의<br/>솜SEE 좋은 리디뷰 .</p>
             </div>
             <div className='absolute flex items-end right-4 md:w-48 md:bottom-0'>
-              <Image src="/visual-01.png" width={260} height={192} />
+              <Image src="/visual-01.png" width={260} height={192} alt="" />
             </div>
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function Visual() {
               <p>밍호2019 장편소설 특집<br/>리디뷰 작성하고,<br/>경품도 받아가자!</p>
             </div>
             <div className='absolute flex items-end right-4 md:w-48 md:bottom-0'>
-              <Image src="/visual-02.png" width={260} height={192} />
+              <Image src="/visual-02.png" width={260} height={192} alt="" />
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function Visual() {
               <p>우리 세대는 독서 세대!<br/>친구들과 함께 TURVooks.</p>
             </div>
             <div className='absolute flex items-end right-4 md:w-48 md:bottom-0'>
-              <Image src="/visual-03.png" width={260} height={192} />
+              <Image src="/visual-03.png" width={260} height={192} alt="" />
             </div>
           </div>
         </div>

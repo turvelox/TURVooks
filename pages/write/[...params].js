@@ -114,7 +114,7 @@ export default function Write({ year, month, date }) {
                         <span className='flex flex-col items-center'>
                             <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>
                             <span className='block w-[90px] h-[125px] border-all-1 mini-book relative'>
-                                <Image src={selec ? selec.img : '/bookdefault.png'} layout='fill' objectFit="cover" objectPosition="top" />
+                                <Image src={selec ? selec.img : '/bookdefault.png'} layout='fill' objectFit="cover" objectPosition="top" alt="" />
                             </span>
                         </span>
                         <span className='pl-[15px]'>
@@ -131,7 +131,7 @@ export default function Write({ year, month, date }) {
             <section>
                 <form className='px-[15px] py-[30px] flex flex-col items-center border-t-1'>
                     <div className='border-all-1'>
-                        <label htmlFor="write-thum" className='max-w-[400px] max-h-[250px]'><img src='/input-file.png' /></label>
+                        <label htmlFor="write-thum" className='max-w-[400px] max-h-[250px]'><img src='/input-file.png' alt="" /></label>
                         <input type="file" className='hidden' id="write-thum" name="thum" />
                     </div>
                     <div className='mt-[15px] w-full'>

@@ -219,19 +219,19 @@ export default function Login() {
                     <p className='text-lg pb-8'>내가 <span className='font-green font-bold'>읽은 책을 공유</span>하는,<br/>가장 빠른 방법!</p>
                 </div>
                 <div className='w-full h-96 overflow-hidden relative'>
-                    <span className='absolute animate-drop cloud-01'><Image src="/cloud-01.png" width={65} height={35} /></span>
-                    <span className='absolute animate-drop cloud-02'><Image src="/cloud-02.png" width={65} height={35} /></span>
-                    <span className='absolute rocket'><Image src="/rocket.gif" width={160} height={290} /></span>
+                    <span className='absolute animate-drop cloud-01'><Image src="/cloud-01.png" width={65} height={35} alt="" /></span>
+                    <span className='absolute animate-drop cloud-02'><Image src="/cloud-02.png" width={65} height={35} alt="" /></span>
+                    <span className='absolute rocket'><Image src="/rocket.gif" width={160} height={290} alt="" /></span>
                 </div>
             </div>
             <div className='flex-1 margin-15 flex justify-center'>
                 <div className={`relative text-center con-box py-14 max-w-sm`}>
                     <div className='absolute people-box overflow-hidden'>
                         <span className='people-imgs'>
-                            <Image src="/people.png" width={300} height={120} />
+                            <Image src="/people.png" width={300} height={120} alt="" />
                         </span>
                     </div>
-                    <Image src="/login-logo.png" width={156} height={60} />
+                    <Image src="/login-logo.png" width={156} height={60} alt="" />
                     <form className='pt-14 px-[30px]'>
                         <input className='gray-input-style' placeholder='이메일' name='loginEmail' type="email" onChange={changeInput} value={loginEmail} />
                         <input className='gray-input-style mt-1.5' placeholder='비밀번호' name='loginPwd' type="password" onChange={changeInput} value={loginPwd} />
