@@ -34,7 +34,7 @@ export default function Write({ year, month, date }) {
             copy: "수면 과학의 역사 우리에게 필요한 수면량 좋은 수면의 메커니즘 신체의 일주기리듬 수면/기상 주기 호르몬과 수면 수면의 단계 꿈 좋은 잠과 나쁜 잠 좋은 수면 습관 들이기 수면 일기 슬기로운 수면 생활"
         }
     ]);
-    const [viewNum, setViewNum] = useState(3);
+    const [viewNum, setViewNum] = useState(5);
     const [indexSug, setIndexSug] = useState(0);
     const [selec, setSelec] = useState("");
     const [contents, setContents] = useState([]);

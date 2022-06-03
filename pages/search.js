@@ -64,7 +64,7 @@ export default function View() {
                     sug.map((item, index) => 
                         <li className='px-[15px] w-[50%] me:px-[20px] me:w-[100%]' key={index}>
                             <div className='relative'>
-                                <a target="_blank" rel="noopener noreferrer" href={item.link}>
+                                <a rel="noopener noreferrer" href={`/list/${item.title}`}>
                                     <div className='flex items-center py-[10px]'>
                                         <span className='flex flex-col items-center'>
                                             <span className='book-line-01 block'></span><span className='book-line-02 block'></span><span className='book-line-03 block'></span>

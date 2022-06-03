@@ -5,7 +5,7 @@ import React, {useState, useEffect} from 'react'
 
 export default function Login() {
 
-    const [viewNum, setViewNum] = useState(3);
+    const [viewNum, setViewNum] = useState(5);
  
     const [contents, setContents] = useState(  // contents 기본 가데이터
         [
@@ -30,7 +30,29 @@ export default function Login() {
             book_thum: "/suggest03.png",
             book_title: "수면의 과학",
             card_date: "2022.05.23"
-          }
+          },
+          {
+            link: "3",
+            author_img: "/pf02.png",
+            author: "karoiwi",
+            title: "내가 독일 제품만 사는 이유?!",
+            copy: "내가 사는 제품들은 모든 것이 독일 브랜드 제품이다. 그 이유는 내가 직접 써보고 만족스러움이 매우 컷던 탓이다. 내가 처음 독일 제품을 접하게 된 계기는 면도기였다. 브라운 면도기를 사용해보고 왜 독일이 강대국인지 알수 있었다. 그것은 직접 경험해보지 못하고서야 아무도 알 수 없었다.",
+            thum: "/card03.jpg",
+            book_thum: "/suggest01.png",
+            book_title: "독일은 왜 잘하는가 : 성숙하고 부강한 나라의 비밀",
+            card_date: "2022.05.23"
+          },
+          {
+            link: "4",
+            author_img: "/pf01.png",
+            author: "heritage_boy",
+            title: "창업을 한 상태라면 꼭 읽어봐야한다!",
+            copy: "옛날부터 나는 창업에 꿈이있었다. 요식업이 아니라 나만의 에이전시를 차리는 꿈이였다. 하지만 실행에 옮기면서부터 내 인생은 확 뒤바뀌기 시작했다. 언젠가처럼 힘들었고, 복잡하고 내가 몰랐던부분까지 챙겨야하기때문에 하루하루 사는것이 시간이 부족했고 정신도 하나도없이 좀비처럼 살아갔다.",
+            thum: "/card04.jpg",
+            book_thum: "/suggest02.png",
+            book_title: "이것은 작은 브랜드를 위한 책",
+            card_date: "2022.05.23"
+          },
           
         ]
       );  
